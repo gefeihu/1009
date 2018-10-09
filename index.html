@@ -1,1 +1,18 @@
-哈哈哈哈哈
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../d3.min.js"></script>
+</head>
+<body>
+
+    <script>
+        d3.csv("data.csv", function(data) {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].Name);
+                console.log(data[i].Age);
+            }
+        });
+    </script>
+</body>
+</html>
