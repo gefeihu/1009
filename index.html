@@ -6,9 +6,9 @@
 <body>
 
     <script>
-        d3.csv("99.csv", function(data) {
+        d3.csv("1009104.csv", function(data) {
             console.log(data);
-            for (var i =1; i < data.length; i=i++) {
+            for (var i =1; i < data.length; i=i+50) {
                 console.log(data[i].question);
                 console.log(data[i].answer);
             }
