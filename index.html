@@ -6,11 +6,11 @@
 <body>
 
     <script>
-        d3.csv("data.csv", function(data) {
+        d3.csv("99.csv", function(data) {
             console.log(data);
-            for (var i = 0; i < data.length; i++) {
-                console.log(data[i].Name);
-                console.log(data[i].Age);
+            for (var i =1; i < data.length; i=i++) {
+                console.log(data[i].question);
+                console.log(data[i].answer);
             }
         });
     </script>
