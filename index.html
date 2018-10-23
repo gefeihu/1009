@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf8">
 <head>
     <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
+    <svg width="500" height="500">
+        <rect x="0" y="0" width="200" height="200"></rect>
+</svg>
+<script>
+    var width = 500;
+    var height = 500;
 
-    <script>
-        d3.csv("1009104.csv", function(data) {
-            console.log(data);
-            for (var i =1; i < data.length; i=i+50) {
-                console.log(data[i].question);
-                console.log(data[i].answer);
-            }
+    //Create SVG element
+    var svg = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+    //Create line element inside SVG
+svg.append("line")
+.attr("x1", 100)
+.attr("x2", 500)
+.attr("y1", 50)
+.attr("y2", 50)
+.attr("stroke", "green")
+</script>
+    
+    <svg width="500" height="500">
+        <circle cx="250" cy="50" r="50"/>
+</svg>
+
+<script>
+   var width = 500;
+var height = 500;
+    
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+var g = svg.append("g")
+            .attr("transform", function(d, i) {
+                    return "translate(0,0)";
+            });
+
+var ellipse = g.append("ellipse")
+                .attr("cx", 250)
+                .attr("cy", 50)
+                .attr("rx", 150)
+                .attr("ry", 50)
+                .attr("fill", "green")
+                .attr("opacity", 0.8)
+
+g.append("text")
+ .attr("x", 140)
+ .attr("y", 50)
+ .attr("stroke", "steelblue")
+ .attr("font-family", "sans-serif")
+ .attr("font-size", "24px")
+ .text("小世界!");
+    </script>
+   
+   
+   <script>
+ d3.json("/data/JOB.json", function(error, data) {
+    var result=[];
+    for(var i =10;i<21;i++)(result.push(data[i]);
+        
+    }
+    console.log(result)
+    d3.select("body")
+        .selectAll("p")
+        .data(data)
+        .enter()
+        .append("p")
+        .text(function(d) {
+            return d.name + ", " + d.location;
         });
+
+});
     </script>
 </body>
 </html>
