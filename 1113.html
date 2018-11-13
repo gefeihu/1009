@@ -38,7 +38,7 @@ var g = svg.append("g")
         }
 
         xScale.domain(data.map(function(d) { return d.party; }));
-        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
+        yScale.domain([0, d3.max(data, function(d) { return parseInt(d.value); })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
