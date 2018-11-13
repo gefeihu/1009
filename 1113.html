@@ -37,7 +37,7 @@ var g = svg.append("g")
             throw error;
         }
 
-        xScale.domain(data.map(function(d) { return d.year; }));
+        xScale.domain(data.map(function(d) { return d.party; }));
         yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 
         g.append("g")
@@ -46,7 +46,7 @@ var g = svg.append("g")
 
         g.append("g")
          .call(d3.axisLeft(yScale).tickFormat(function(d){
-             return "$" + d;
+             return  + d;
          }).ticks(10));
 
 
@@ -54,7 +54,7 @@ var g = svg.append("g")
          .data(data)
          .enter().append("rect")
          .attr("class", "bar")
-         .attr("x", function(d) { return xScale(d.year); })
+         .attr("x", function(d) { return xScale(d.party); })
          .attr("y", function(d) { return yScale(d.value); })
          .attr("width", xScale.bandwidth())
          .attr("height", function(d) { return height - yScale(d.value); });
