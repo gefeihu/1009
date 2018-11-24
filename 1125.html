@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 <head>
+        <meta charset="UTF-8" />
     <style>
         .bar {
-            fill: steelblue;
+            fill: rgb(180, 70, 156);
         }
 
         .highlight {
@@ -26,7 +27,7 @@
        .attr("x", 50)
        .attr("y", 50)
        .attr("font-size", "24px")
-       .text("XYZ Foods Stock Price")
+       .text("新北市新店區103年度村里長黨籍統計")
 
     var x = d3.scaleBand().range([0, width]).padding(0.4),
         y = d3.scaleLinear().range([height, 0]);
@@ -34,13 +35,13 @@
     var g = svg.append("g")
             .attr("transform", "translate(" + 100 + "," + 100 + ")");
 
-    d3.csv("xyz.csv", function(error, data) {
+    d3.csv("ABC.csv", function(error, data) {
         if (error) {
             throw error;
         }
 
-        x.domain(data.map(function(d) { return d.year; }));
-        y.domain([0, d3.max(data, function(d) { return d.value; })]);
+        x.domain(data.map(function(d) { return d.Party; }));
+        y.domain([0, d3.max(data, function(d) { return d.Value; })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
@@ -50,7 +51,7 @@
          .attr("x", width - 100)
          .attr("text-anchor", "end")
          .attr("stroke", "black")
-         .text("Year");
+         .text("Party");
 
         g.append("g")
          .call(d3.axisLeft(y).tickFormat(function(d){
@@ -62,7 +63,7 @@
          .attr("dy", "-5.1em")
          .attr("text-anchor", "end")
          .attr("stroke", "black")
-         .text("Stock Price");
+         .text("Value");
 
         g.selectAll(".bar")
          .data(data)
