@@ -55,7 +55,7 @@
 
         g.append("g")
          .call(d3.axisLeft(y).tickFormat(function(d){
-             return "$" + d;
+             return "" + d;
          }).ticks(10))
          .append("text")
          .attr("transform", "rotate(-90)")
@@ -71,8 +71,8 @@
          .attr("class", "bar")
          .on("mouseover", onMouseOver) //Add listener for the mouseover event
          .on("mouseout", onMouseOut)   //Add listener for the mouseout event
-         .attr("x", function(d) { return x(d.year); })
-         .attr("y", function(d) { return y(d.value); })
+         .attr("x", function(d) { return x(d.Party); })
+         .attr("y", function(d) { return y(d.Value); })
          .attr("width", x.bandwidth())
          .transition()
          .ease(d3.easeLinear)
@@ -80,7 +80,7 @@
          .delay(function (d, i) {
              return i * 50;
          })
-         .attr("height", function(d) { return height - y(d.value); });
+         .attr("height", function(d) { return height - y(d.Value); });
     });
     
     //mouseover event handler function
@@ -90,19 +90,19 @@
           .transition()     // adds animation
           .duration(400)
           .attr('width', x.bandwidth() + 5)
-          .attr("y", function(d) { return y(d.value) - 10; })
-          .attr("height", function(d) { return height - y(d.value) + 10; });
+          .attr("y", function(d) { return y(d.Value) - 10; })
+          .attr("height", function(d) { return height - y(d.Value) + 10; });
 
         g.append("text")
          .attr('class', 'val') 
          .attr('x', function() {
-             return x(d.year);
+             return x(d.Party);
          })
          .attr('y', function() {
              return y(d.value) - 15;
          })
          .text(function() {
-             return [ '$' +d.value];  // Value of the text
+             return [ '$' +d.Value];  // Value of the text
          });
     }
 
