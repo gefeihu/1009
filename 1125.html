@@ -114,8 +114,8 @@
           .transition()     // adds animation
           .duration(400)
           .attr('width', x.bandwidth())
-          .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); });
+          .attr("y", function(d) { return y(d.Value); })
+          .attr("height", function(d) { return height - y(d.Value); });
 
         d3.selectAll('.val')
           .remove()
