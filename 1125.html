@@ -73,7 +73,7 @@
             
                 arc.append("text")
                    .attr("transform", function(d) { 
-                            return "translate(" + label.centroid(d) + ")"; 
+                            return "translate(" + labelArc.centroid(d)  + ")"; 
                     })
                    .text(function(d) { return d.data.gender; });
                 });
@@ -84,8 +84,8 @@
                    .text("107年度新北市新店區村里長男女比例")
                    .attr("class", "title")
         </script>
-<svg width="400" height="500"></svg>
-<script>
+<svg width="600" height="500"></svg>
+<script> 
 
     var svg = d3.select("svg"),
         margin = 200,
