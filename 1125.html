@@ -49,12 +49,12 @@
                 });
     
             var path = d3.arc()
-                         .outerRadius(radius - 50)
+                         .outerRadius(radius - 10)
                          .innerRadius(0);
     
             var label = d3.arc()
                           .outerRadius(radius)
-                          .innerRadius(radius - 50);
+                          .innerRadius(radius - 10);
     
             d3.csv("gender.csv", function(error, data) {
                 if (error) {
@@ -96,7 +96,7 @@
        .attr("transform", "translate(100,0)")
        .attr("x", 50)
        .attr("y", 50)
-       .attr("font-size", "24px")
+       .attr("font-size", "20px")
        .text("新北市新店區103年度村里長黨籍統計")
 
     var x = d3.scaleBand().range([0, width]).padding(0.4),
