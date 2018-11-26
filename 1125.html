@@ -49,12 +49,12 @@
                 });
     
             var path = d3.arc()
-                         .outerRadius(radius - 50)
+                         .outerRadius(radius - 10)
                          .innerRadius(0);
     
             var label = d3.arc()
                           .outerRadius(radius)
-                          .innerRadius(radius - 50);
+                          .innerRadius(radius - 10);
     
             d3.csv("gender.csv", function(error, data) {
                 if (error) {
