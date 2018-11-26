@@ -26,10 +26,10 @@
         var svg = d3.select("svg"),
             width = svg.attr("width"),
             height = svg.attr("height"),
-            radius = Math.min(width, height) / 4;
+            radius = Math.min(width, height) / 2;
         
         var g = svg.append("g")
-                   .attr("transform", "translate");
+                   .attr("transform", "translate("+ width / 2 + "," + height / 2 + ");");
 
         var color = d3.scaleOrdinal(['#4daf4a','#984ea3']);
 
