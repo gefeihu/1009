@@ -40,8 +40,8 @@
             throw error;
         }
 
-        xScale.domain(data.map(function(d) { return d.Party; }));
-        yScale.domain([0, d3.max(data, function(d){return parseInt(d.Value); })]);
+        x.domain(data.map(function(d) { return d.Party; }));
+        y.domain([0, d3.max(data, function(d){return(d.Value); })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
@@ -71,8 +71,8 @@
          .attr("class", "bar")
          .on("mouseover", onMouseOver) //Add listener for the mouseover event
          .on("mouseout", onMouseOut)   //Add listener for the mouseout event
-         .attr("x", function(d) { return xScale(d.Party); })
-         .attr("y", function(d) { return yScale(d.Value); })
+         .attr("x", function(d) { return x(d.Party); })
+         .attr("y", function(d) { return y(d.Value); })
          .attr("width", x.bandwidth())
          .transition()
          .ease(d3.easeLinear)
