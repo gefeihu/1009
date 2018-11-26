@@ -40,8 +40,8 @@
             throw error;
         }
 
-        x.domain(data.map(function(d) { return d.Party; }));
-        y.domain([0, d3.max(data, function(d){ return parseInt(d.Value); })]);
+        xScale.domain(data.map(function(d) { return d.Party; }));
+        yScale.domain([0, d3.max(data, function(d){return parseInt(d.Value); })]);
 
         g.append("g")
          .attr("transform", "translate(0," + height + ")")
