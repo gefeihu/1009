@@ -2,21 +2,7 @@
 <html>
 <head>
         <meta charset="UTF-8" />
-        <style>
-                .arc text {
-                    font:8px sans-serif;
-                    text-anchor: middle;
-                }
-        
-                .arc path {
-                    stroke: #fff;
-                }
-        
-                .title {
-                    fill: rgb(0, 128, 6);
-                    font-weight: bold;
-                }
-            </style>
+       
             <script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
         .bar {
@@ -30,60 +16,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     
 </head>
-<body>
-        <svg width="400" height="500"></svg>
-        <script>
-    
-            var svg = d3.select("svg"),
-                width = svg.attr("width"),
-                height = svg.attr("height"),
-                radius = Math.min(width, height) / 2;
-            
-            var g = svg.append("g")
-                       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-    
-            var color = d3.scaleOrdinal(['#4daf4a','#984ea3']);
-    
-            var pie = d3.pie().value(function(d) { 
-                    return d.percent; 
-                });
-    
-            var path = d3.arc()
-                         .outerRadius(radius - 10)
-                         .innerRadius(0);
-    
-            var label = d3.arc()
-                          .outerRadius(radius)
-                          .innerRadius(radius - 10);
-    
-            d3.csv("gender.csv", function(error, data) {
-                if (error) {
-                    throw error;
-                }
-                var arc = g.selectAll(".arc")
-                           .data(pie(data))
-                           .enter().append("g")
-                           .attr("class", "arc");
-    
-                arc.append("path")
-                   .attr("d", path)
-                   .attr("fill", function(d) { return color(d.data.gender); });
-            
-                console.log(arc)
-            
-                arc.append("text")
-                   .attr("transform", function(d) { 
-                            return "translate(" + labelArc.centroid(d)  + ")"; 
-                    })
-                   .text(function(d) { return d.data.gender; });
-                });
-    
-                svg.append("g")
-                   .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
-                   .append("text")
-                   .text("103年度新北市新店區村里長男女比例")
-                   .attr("class", "title")
-        </script>
+<body> 
 <svg width="600" height="500"></svg>
 <script> 
 
