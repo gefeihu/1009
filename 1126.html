@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
     <style>
         .arc text {
-            font:8px sans-serif;
+            font:20px sans-serif;
             text-anchor: middle;
         }
 
@@ -38,7 +38,7 @@
             });
 
         var path = d3.arc()
-                     .outerRadius(radius - 80)
+                     .outerRadius(radius - 50)
                      .innerRadius(0);
 
         var label = d3.arc()
@@ -70,7 +70,7 @@
             svg.append("g")
                .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
                .append("text")
-               .text("107年度新北市新店區村里長男女比例")
+               .text("103年度新北市新店區村里長男女比例")
                .attr("class", "title")
     </script>
 </body>
