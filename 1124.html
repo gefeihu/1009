@@ -71,8 +71,8 @@
          .attr("class", "bar")
          .on("mouseover", onMouseOver) //Add listener for the mouseover event
          .on("mouseout", onMouseOut)   //Add listener for the mouseout event
-         .attr("x", function(d) { return x(d.Party); })
-         .attr("y", function(d) { return y parseInt(d.Value); })
+         .attr("x", function(d) { return xScale(d.Party); })
+         .attr("y", function(d) { return yScale(d.Value); })
          .attr("width", x.bandwidth())
          .transition()
          .ease(d3.easeLinear)
