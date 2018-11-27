@@ -56,7 +56,7 @@
                 g.append("g")
                  .call(d3.axisLeft(y).tickFormat(function(d){
                      return "" + d;
-                 })parseInt.ticks(10))
+                 }).ticks(10))
                  .append("text")
                  .attr("transform", "rotate(-90)")
                  .attr("y", 6)
